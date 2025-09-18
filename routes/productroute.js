@@ -17,4 +17,11 @@ router.post("/add" , async(req,res)=>{
     }
 })
 
+router.get("/list" , async(req,res)=>{
+    const products = await Products.find({})
+    res.json({
+        "products" : products
+    })
+})
+
 module.exports = router
